@@ -7,46 +7,68 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=3
+SelectedTab=1
 [Window0]
-Filename=Workspace Dashboard
-ViewType=101
-Top=21
-Left=0
-Bottom=718
-Right=1465
-TabIndex=0
-TabGroup=0
-[Window1]
-Filename=C:\DataFlex Projects\Prueba2\AppSrc\WebApp.src
-ViewType=1
-Top=21
-Left=0
-Bottom=718
-Right=1465
-CursorLine=174
-CursorColumn=0
-TabIndex=1
-TabGroup=0
-[Window2]
 Filename=C:\DataFlex Projects\Prueba2\AppSrc\Dashboard.wo
 ViewType=1
 Top=21
 Left=0
-Bottom=718
-Right=1465
-CursorLine=127
-CursorColumn=37
+Bottom=620
+Right=969
+CursorLine=129
+CursorColumn=54
 TabIndex=2
 TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\Prueba2\AppSrc\ZoomLiga.wo
+[Window1]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\SelectLiga.wo
 ViewType=1
 Top=21
 Left=0
-Bottom=718
-Right=1465
-CursorLine=0
+Bottom=620
+Right=969
+CursorLine=37
 CursorColumn=0
 TabIndex=3
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\ZoomJugador.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=620
+Right=969
+CursorLine=29
+CursorColumn=34
+TabIndex=4
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\SelectPosicion.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=620
+Right=969
+CursorLine=21
+CursorColumn=0
+TabIndex=5
+TabGroup=0
+[Window4]
+Filename=Workspace Dashboard
+ViewType=101
+Top=21
+Left=0
+Bottom=620
+Right=969
+TabIndex=0
+TabGroup=0
+[Window5]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\WebApp.src
+ViewType=1
+Top=21
+Left=0
+Bottom=620
+Right=969
+CursorLine=205
+CursorColumn=0
+TabIndex=1
 TabGroup=0
