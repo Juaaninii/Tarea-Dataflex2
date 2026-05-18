@@ -1,0 +1,52 @@
+[Workspace]
+CurrentProject=WebApp.src
+Location=C:\DataFlex Projects\Prueba2\IdeSrc\revol_Studio.dsk
+CreateNew=3
+[TabWindows]
+GroupCount=1
+HorizontalGroups=1
+[TabGroup0]
+GroupSize=40
+SelectedTab=3
+[Window0]
+Filename=Workspace Dashboard
+ViewType=101
+Top=21
+Left=0
+Bottom=718
+Right=1465
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\WebApp.src
+ViewType=1
+Top=21
+Left=0
+Bottom=718
+Right=1465
+CursorLine=174
+CursorColumn=0
+TabIndex=1
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\Dashboard.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=718
+Right=1465
+CursorLine=127
+CursorColumn=37
+TabIndex=2
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\Prueba2\AppSrc\ZoomLiga.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=718
+Right=1465
+CursorLine=0
+CursorColumn=0
+TabIndex=3
+TabGroup=0
