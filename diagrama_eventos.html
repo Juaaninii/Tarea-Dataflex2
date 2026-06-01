@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Eventos - Prueba2 (Optimizado)</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'dark',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        .info {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #94a3b8;
+            text-align: center;
+            max-width: 800px;
+        }
+        .mermaid-wrapper {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            width: 100%;
+            max-width: 1100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapeo de Eventos: Prueba2</h1>
+    <div class="info">
+        Estructura jerárquica y eventos del proyecto DataFlex.     
+</div>
+
+    <div class="mermaid-wrapper">
+        <div class="mermaid">
+        graph TB
+            %% Configuración de Estilos Globales
+            classDef coreClass fill:#0369a1,stroke:#0284c7,stroke-width:2px,color:#fff;
+            classDef selectClass fill:#0f766e,stroke:#14b8a6,stroke-width:2px,color:#fff;
+            classDef zoomClass fill:#b45309,stroke:#f59e0b,stroke-width:2px,color:#fff;
+            classDef eventClass fill:#1e293b,stroke:#475569,stroke-width:1px,color:#94a3b8;
+
+            %% 1. NÚCLEO Y DASHBOARD
+            subgraph BLOQUE_CORE ["1. Núcleo de la Aplicación"]
+                WebApp["oWebApp (cWebApp)"]
+                Dashboard["oDashboard (cWebView)"]
+                
+                %% Eventos Core
+                E_Core1["OnUpdateViewStack"]
+                E_Core2["OnLoad"]
+                E_Core3["OnBeforeShow"]
+                
+                WebApp --> E_Core1
+                Dashboard --> E_Core2
+                Dashboard --> E_Core3
+            end
+            class WebApp,Dashboard coreClass;
+            class E_Core1,E_Core2,E_Core3 eventClass;
+
+            %% 2. VISTAS SELECT
+            subgraph BLOQUE_SELECT ["2. Vistas de Selección (Select...)"]
+                S_Liga["oSelectLiga"]
+                S_Equipo["oSelectEquipo"]
+                S_Jugador["oSelectJugador"]
+                S_Entrenador["oSelectEntrenador"]
+                S_Posicion["oSelectPosicion"]
+                
+                %% Bloque de Eventos Comunes para Selects
+                E_Select["<b>Eventos de Navegación y Rejilla:</b><br>• OnNavigateForward<br>• OnRowClick<br>• OnGetNavigateForwardData"]
+                
+                S_Liga & S_Equipo & S_Jugador & S_Entrenador & S_Posicion --> E_Select
+            end
+            class S_Liga,S_Equipo,S_Jugador,S_Entrenador,S_Posicion selectClass;
+            class E_Select eventClass;
+
+            %% 3. VISTAS ZOOM
+            subgraph BLOQUE_ZOOM ["3. Vistas de Detalle y Datos (Zoom...)"]
+                Z_Liga["oZoomLiga"]
+                Z_Equipo["oZoomEquipo"]
+                Z_Jugador["oZoomJugador"]
+                Z_Entrenador["oZoomEntrenador"]
+                Z_Posicion["oZoomPosicion"]
+                
+                %% Bloque de Eventos Comunes para Zooms
+                E_Zoom["<b>Eventos de Mantenimiento (DDO):</b><br>• OnNavigateForward<br>• OnPrompt (Lupa)<br>• OnViewSaved (Guardar)<br>• OnViewDeleted (Borrar)"]
+                
+                Z_Liga & Z_Equipo & Z_Jugador & Z_Entrenador & Z_Posicion --> E_Zoom
+            end
+            class Z_Liga,Z_Equipo,Z_Jugador,Z_Entrenador,Z_Posicion zoomClass;
+            class E_Zoom eventClass;
+
+            %% Relaciones de Flujo de Datos entre bloques
+            BLOQUE_SELECT -- "Salto a Detalle (Forward)" --> BLOQUE_ZOOM
+            BLOQUE_ZOOM -- "Búsqueda con Lupa (Prompt)" --> S_Posicion
+            BLOQUE_ZOOM -- "Búsqueda de Liga" --> S_Liga
+        </div>
+    </div>
+
+</body>
+</html>

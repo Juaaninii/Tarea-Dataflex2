@@ -99,6 +99,22 @@ Object oZoomLiga is a cWebView
             End_Object
         End_Object 
 
+    Object oVerEquiposBtn is a cWebButton
+        Set piColumnSpan to 4
+        Set piColumnIndex to 0
+        Set psCaption to "Ver Equipos de esta Liga"
+
+        WebRegisterPath ntNavigateForward oSelectEquipo
+
+        Procedure OnClick
+            Send NavigatePath
+        End_Procedure
+
+        Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
+            Move nfFromParent to NavigateData.eNavigateType
+        End_Procedure
+    End_Object
+
     End_Object 
 
 End_Object
